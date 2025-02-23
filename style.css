@@ -51,8 +51,11 @@ nav ul li a {
 nav ul li a:hover {
   color: #FF6B35;
 }
-.register-link {
+/* Specific rule for "Register" */
+nav ul li a.register-link {
   color: white !important; /* Force white color */
+  text-decoration: none !important; /* Remove underline */
+  font-weight: bold !important; /* Make it bold */
 }
 /* Hero Section */
 .hero {
