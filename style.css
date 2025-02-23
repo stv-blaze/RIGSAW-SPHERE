@@ -464,7 +464,30 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+} 
+/* Add this to your CSS file */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-link {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .limited-seats-box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 10px auto;
+    }
 }
+
 
 /* Course Box Styling */
 .course-box {
