@@ -276,6 +276,106 @@ nav ul li a:hover {
 .btn:hover {
   background: #E65A2B;
 }
+/* Sticky Price Box - Always Visible */
+.sticky-price-box {
+  position: fixed;
+  bottom: 10%;
+  right: 20px;
+  background: linear-gradient(135deg, #680040, hsl(251, 100%, 25%));
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  width: 200px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.4);
+  z-index: 9999;
+  animation: glow 1.5s infinite alternate ease-in-out, bounce 2s infinite;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Glowing Effect */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+  100% { box-shadow: 0 0 20px rgb(0, 0, 0); }
+}
+
+/* Bouncing Effect */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Limited Seats Text */
+.limited-text {
+  font-size: 14px;
+  background: yellow;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Old Price with Strike */
+.old-price {
+  font-size: 18px;
+  text-decoration: line-through;
+  color: #ffddc1;
+  margin: 5px 0;
+}
+
+/* New Price */
+.new-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: yellow;
+  animation: shake 1.5s infinite;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+/* RESPONSIVE DESIGN - Adapts to all screen sizes */
+@media (max-width: 1024px) {
+  .sticky-price-box {
+      width: 180px;
+      bottom: 7%;
+      right: 10px;
+  }
+  .new-price { font-size: 20px; }
+}
+
+@media (max-width: 768px) {
+  .sticky-price-box {
+      width: 160px;
+      padding: 12px;
+      bottom: 6%;
+      right: 8px;
+  }
+  .limited-text { font-size: 12px; }
+  .old-price { font-size: 16px; }
+  .new-price { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .sticky-price-box {
+      width: 140px;
+      padding: 10px;
+      bottom: 5%;
+      right: 5px;
+  }
+  .limited-text { font-size: 11px; }
+  .old-price { font-size: 14px; }
+  .new-price { font-size: 16px; }
+}
 
 /* Contact Section */
 #contact {
@@ -291,6 +391,43 @@ nav ul li a:hover {
   font-size: 18px;
   margin-top: 5px;
 }
+/* Make contact button and sections responsive */
+#contact {
+  padding: 40px 15px;
+  max-width: 100%;
+  width: 90%;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.custom-button {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* Improve layout on small screens */
+@media (max-width: 768px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-button {
+    width: 90%;
+  }
+}
+
 
 /* Footer */
 footer {
