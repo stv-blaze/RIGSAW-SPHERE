@@ -29,19 +29,12 @@
 
         .container {
             max-width: 650px;
-            margin: 40px auto;
+            margin: 45px auto;
             padding: 20px;
         }
 
-        .book {
-            width: 280px;
-            max-width: 85%;
-            border-radius: 10px;
-            margin: 25px 0;
-        }
-
         h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 8px;
         }
 
@@ -77,21 +70,6 @@
             margin: 25px 0;
         }
 
-        .buy {
-            display: inline-block;
-            background: #111;
-            color: white;
-            padding: 16px 50px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .buy:hover {
-            background: #333;
-        }
-
         .delivery {
             margin-top: 18px;
             font-size: 14px;
@@ -99,7 +77,7 @@
         }
 
         .help {
-            margin-top: 25px;
+            margin-top: 20px;
             font-size: 15px;
             color: #555;
         }
@@ -115,7 +93,7 @@
         footer a {
             color: #aaa;
             text-decoration: none;
-            margin: 0 8px;
+            margin: 0 7px;
         }
 
         @media (max-width: 600px) {
@@ -129,10 +107,6 @@
 
             h2 {
                 font-size: 19px;
-            }
-
-            .book {
-                width: 240px;
             }
         }
     </style>
@@ -150,42 +124,41 @@
 
     <h2>A Beginner's Layer-by-Layer Guide</h2>
 
-    <img src="ebook-cover.jpg"
-         alt="Solve the Cube - A Beginner's Layer-by-Layer Guide"
-         class="book">
-
     <p class="description">
-        A simple, beginner-friendly guide to solving a standard
-        3×3 Rubik's Cube step by step, with clear images for every step.
+        A simple, beginner-friendly PDF ebook that teaches you how to
+        solve a standard 3×3 Rubik's Cube step by step, with clear
+        images for every step.
     </p>
 
     <div class="details">
         <p>🧩 Standard 3×3 Rubik's Cube</p>
-        <p>📖 Layer-by-layer solving method</p>
+        <p>📖 Step-by-step, layer-by-layer method</p>
         <p>👀 Clear images for every step</p>
-        <p>🎯 Designed for complete beginners</p>
+        <p>🎯 Made for complete beginners</p>
         <p>📄 English PDF ebook</p>
         <p>📩 Delivered through Google Drive within 24 hours</p>
-        <p>💬 Get help by email if you have a doubt about any step</p>
+        <p>💬 Have a doubt? Email us and we'll help you.</p>
     </div>
 
     <div class="price">
         Only ₹49
     </div>
 
-    <!-- Replace with your Razorpay Payment Link -->
-    <a href="YOUR_RAZORPAY_PAYMENT_LINK"
-       class="buy"
-       target="_blank">
-        Buy Now – ₹49
-    </a>
+    <!-- Razorpay Payment Button -->
+    <form>
+        <script
+            src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_TXvTCSYotT4yK3"
+            async>
+        </script>
+    </form>
 
     <p class="delivery">
         Your ebook will be delivered to your email within 24 hours.
     </p>
 
     <p class="help">
-        Have a question? Contact us by email and we'll be happy to help.
+        Need help? Contact us by email if you have any questions.
     </p>
 
 </div>
