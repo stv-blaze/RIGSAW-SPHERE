@@ -63,19 +63,61 @@
             outline-offset: 2px;
         }
 
+        /* Professional Gradient Header */
+
         header {
-            background: var(--ink);
-            color: #f4f2ee;
-            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 15% 50%, rgba(73, 102, 210, 0.45), transparent 32%),
+                radial-gradient(circle at 85% 50%, rgba(116, 72, 190, 0.38), transparent 35%),
+                linear-gradient(110deg, #111827, #1e2a55 50%, #24183f);
+
+            color: #ffffff;
+            padding: 23px 20px;
             font-family: 'Outfit', sans-serif;
-            font-size: 19px;
-            font-weight: 700;
-            letter-spacing: 0.3px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+
+            box-shadow: 0 6px 22px rgba(20, 25, 50, 0.18);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.035);
+            top: -100px;
+            left: 20%;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.025);
+            bottom: -150px;
+            right: 15%;
+        }
+
+        .brand {
+            position: relative;
+            z-index: 1;
         }
 
         .cube-stripe {
-            height: 6px;
-            background: var(--cube-gradient);
+            height: 4px;
+            background: linear-gradient(
+                90deg,
+                #2d5fe0,
+                #6d5ce7,
+                #2d5fe0
+            );
         }
 
         .hero {
@@ -286,7 +328,8 @@
 
             header {
                 font-size: 17px;
-                padding: 16px;
+                padding: 18px 16px;
+                letter-spacing: 1px;
             }
 
             .hero {
@@ -344,7 +387,7 @@
 <body>
 
 <header>
-    Rigsaw Sphere
+    <div class="brand">RIGSAW SPHERE</div>
 </header>
 
 <div class="cube-stripe"></div>
