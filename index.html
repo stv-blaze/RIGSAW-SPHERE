@@ -6,115 +6,336 @@
 
     <title>Rigsaw Sphere | Solve the Cube</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --ink: #16171a;
+            --ink-soft: #5c5f66;
+            --paper: #f7f6f2;
+            --card: #ffffff;
+            --line: #e9e7e1;
+            --blue: #2d5fe0;
+            --blue-dark: #1f45ad;
+            --blue-tint: #eaf0ff;
+            --focus: #2d5fe0;
+
+            --radius-lg: 22px;
+            --radius-md: 14px;
+
+            --cube-gradient: linear-gradient(90deg,
+                #e6432c 0%, #e6432c 20%,
+                #f2a531 20%, #f2a531 40%,
+                #f2d33c 40%, #f2d33c 60%,
+                #3aa657 60%, #3aa657 80%,
+                #2d5fe0 80%, #2d5fe0 100%);
+        }
+
         * {
             box-sizing: border-box;
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.001ms !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--ink);
+            background: var(--paper);
             text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--focus);
+            outline-offset: 2px;
         }
 
         header {
-            background: #111;
-            color: white;
-            padding: 18px;
-            font-size: 22px;
-            font-weight: bold;
+            background: var(--ink);
+            color: #f4f2ee;
+            padding: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
         }
 
-        .container {
-            max-width: 650px;
-            margin: 45px auto;
-            padding: 20px;
+        .cube-stripe {
+            height: 6px;
+            background: var(--cube-gradient);
+        }
+
+        .hero {
+            background:
+                radial-gradient(65% 60% at 20% 0%, #eef2ff 0%, transparent 60%),
+                radial-gradient(55% 50% at 100% 0%, #fdf1e8 0%, transparent 55%),
+                var(--paper);
+
+            padding: 70px 20px 46px;
+        }
+
+        .hero-inner {
+            max-width: 620px;
+            margin: 0 auto;
+            animation: rise 0.6s ease both;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            font-size: 40px;
-            margin-bottom: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.06;
+            letter-spacing: -0.5px;
+            margin: 0 0 12px;
         }
 
         h2 {
-            font-size: 21px;
-            font-weight: normal;
-            color: #555;
-            margin-top: 0;
+            font-size: 19px;
+            font-weight: 500;
+            color: var(--ink-soft);
+            margin: 0;
         }
 
         .description {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #555;
-            margin: 25px auto;
+            max-width: 480px;
+            margin: 26px auto 0;
+            font-size: 16.5px;
+            line-height: 1.7;
+            color: var(--ink-soft);
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 0 20px 30px;
         }
 
         .details {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 25px 0;
+            background: var(--card);
+            padding: 6px 26px;
+            border-radius: var(--radius-lg);
+            margin: 40px 0 0;
             text-align: left;
+
+            box-shadow:
+                0 1px 2px rgba(22, 23, 26, 0.04),
+                0 18px 34px -22px rgba(22, 23, 26, 0.20);
+
+            border: 1px solid var(--line);
         }
 
         .details p {
-            margin: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 0;
+            padding: 16px 0;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--ink);
         }
 
-        .price {
-            font-size: 32px;
-            font-weight: bold;
-            margin: 25px 0;
+        .details p + p {
+            border-top: 1px solid var(--line);
+        }
+
+        /* Purchase card */
+
+        .buy-card {
+            position: relative;
+            margin: 46px 0 0;
+            padding: 3px;
+            border-radius: calc(var(--radius-lg) + 3px);
+            background: var(--cube-gradient);
+
+            box-shadow:
+                0 24px 48px -20px rgba(45, 95, 224, 0.35);
+        }
+
+        .buy-card-inner {
+            background: var(--card);
+            border-radius: var(--radius-lg);
+            padding: 28px 28px 26px;
+        }
+
+        /* Compact offer */
+
+        .price-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .price-word {
+            display: inline-block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--blue-dark);
+            letter-spacing: 0.2px;
+        }
+
+        .price-amount {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            line-height: 1;
+        }
+
+        .old-price {
+            font-size: 25px;
+            font-weight: 600;
+            color: #999;
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+        }
+
+        .new-price {
+            font-size: 58px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            color: var(--blue-dark);
         }
 
         .razorpay-button {
             min-height: 55px;
-            margin: 15px 0 20px;
+            margin: 24px 0 0;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
+        .razorpay-button iframe {
+            border-radius: 12px !important;
+        }
+
         .delivery {
-            margin-top: 18px;
+            margin: 22px 0 0;
             font-size: 14px;
-            color: #666;
+            color: var(--ink-soft);
         }
 
         .help {
-            margin-top: 20px;
-            font-size: 15px;
-            color: #555;
+            margin: 8px 0 0;
+            font-size: 14.5px;
+            color: var(--ink-soft);
         }
 
         footer {
-            margin-top: 45px;
-            padding: 20px;
-            background: #111;
-            color: #aaa;
-            font-size: 13px;
+            margin-top: 66px;
+            padding: 30px 15px 26px;
+            background: var(--ink);
+            color: #b9b7b2;
+            font-size: 13.5px;
+        }
+
+        footer nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 4px;
         }
 
         footer a {
-            color: #aaa;
+            color: #d8d6d1;
             text-decoration: none;
-            margin: 0 7px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            transition: color 0.15s ease, background-color 0.15s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        footer .copyright {
+            margin-top: 14px;
+            color: #85837f;
         }
 
         @media (max-width: 600px) {
-            .container {
-                margin: 25px auto;
+
+            header {
+                font-size: 17px;
+                padding: 16px;
+            }
+
+            .hero {
+                padding: 46px 16px 34px;
             }
 
             h1 {
-                font-size: 32px;
+                font-size: 35px;
             }
 
             h2 {
-                font-size: 19px;
+                font-size: 17px;
+            }
+
+            .description {
+                font-size: 15.5px;
+            }
+
+            .container {
+                padding: 0 16px 24px;
+            }
+
+            .details {
+                padding: 4px 20px;
+            }
+
+            .details p {
+                font-size: 15px;
+                padding: 14px 0;
+            }
+
+            .buy-card-inner {
+                padding: 25px 18px 22px;
+            }
+
+            .price-word {
+                font-size: 15px;
+            }
+
+            .old-price {
+                font-size: 21px;
+            }
+
+            .new-price {
+                font-size: 48px;
+            }
+
+            .price-amount {
+                gap: 8px;
             }
         }
     </style>
@@ -126,61 +347,103 @@
     Rigsaw Sphere
 </header>
 
+<div class="cube-stripe"></div>
+
+<section class="hero">
+    <div class="hero-inner">
+
+        <h1>Solve the Cube</h1>
+
+        <h2>A Beginner's Layer-by-Layer Guide</h2>
+
+        <p class="description">
+            A simple, beginner-friendly PDF ebook that teaches you how to
+            solve a standard 3×3 Rubik's Cube step by step, with clear
+            images for every step.
+        </p>
+
+    </div>
+</section>
+
 <div class="container">
 
-    <h1>Solve the Cube</h1>
-
-    <h2>A Beginner's Layer-by-Layer Guide</h2>
-
-    <p class="description">
-        A simple, beginner-friendly PDF ebook that teaches you how to
-        solve a standard 3×3 Rubik's Cube step by step, with clear
-        images for every step.
-    </p>
-
     <div class="details">
+
         <p>🧩 Standard 3×3 Rubik's Cube</p>
+
         <p>📖 Step-by-step, layer-by-layer method</p>
+
         <p>👀 Clear images for every step</p>
+
         <p>🎯 Made for complete beginners</p>
+
         <p>📄 English PDF ebook</p>
+
         <p>📩 Delivered through Google Drive within 24 hours</p>
+
         <p>💬 Have a doubt? Email us and we'll help you.</p>
+
     </div>
 
-    <div class="price">
-        Only ₹49
+    <div class="buy-card">
+
+        <div class="buy-card-inner">
+
+            <div class="price-row">
+
+                <span class="price-word">
+                    Limited Time Offer
+                </span>
+
+                <div class="price-amount">
+                    <span class="old-price">₹149</span>
+                    <span class="new-price">₹49</span>
+                </div>
+
+            </div>
+
+            <!-- Razorpay Payment Button -->
+
+            <div class="razorpay-button">
+
+                <form>
+
+                    <script
+                        src="https://checkout.razorpay.com/v1/payment-button.js"
+                        data-payment_button_id="pl_TXy8CQWo1Ez98E"
+                        async>
+                    </script>
+
+                </form>
+
+            </div>
+
+            <p class="delivery">
+                Your ebook will be delivered to your email within 24 hours.
+            </p>
+
+            <p class="help">
+                Need help? Contact us by email if you have any questions.
+            </p>
+
+        </div>
+
     </div>
-
-    <!-- Razorpay Payment Button -->
-    <div class="razorpay-button">
-        <form>
-            <script
-                src="https://checkout.razorpay.com/v1/payment-button.js"
-                data-payment_button_id="pl_TXy8CQWo1Ez98E"
-                async>
-            </script>
-        </form>
-    </div>
-
-    <p class="delivery">
-        Your ebook will be delivered to your email within 24 hours.
-    </p>
-
-    <p class="help">
-        Need help? Contact us by email if you have any questions.
-    </p>
 
 </div>
 
 <footer>
-    <a href="terms.html">Terms & Conditions</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="contact.html">Contact Us</a>
 
-    <div style="margin-top: 12px;">
+    <nav>
+        <a href="terms.html">Terms & Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="copyright">
         © 2026 Rigsaw Sphere
     </div>
+
 </footer>
 
 </body>
