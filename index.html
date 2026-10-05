@@ -19,619 +19,474 @@
     <style>
 
         :root {
-
             --ink: #16171a;
-
             --ink-soft: #5c5f66;
-
             --paper: #f7f6f2;
-
             --card: #ffffff;
-
             --line: #e9e7e1;
-
             --blue: #2d5fe0;
-
             --blue-dark: #1f45ad;
-
             --blue-tint: #eaf0ff;
-
             --focus: #2d5fe0;
-
             --radius-lg: 22px;
-
             --radius-md: 14px;
 
-            --cube-gradient: linear-gradient(90deg,
-
+            --cube-gradient: linear-gradient(
+                90deg,
                 #e6432c 0%, #e6432c 20%,
-
                 #f2a531 20%, #f2a531 40%,
-
                 #f2d33c 40%, #f2d33c 60%,
-
                 #3aa657 60%, #3aa657 80%,
-
-                #2d5fe0 80%, #2d5fe0 100%);
-
+                #2d5fe0 80%, #2d5fe0 100%
+            );
         }
 
         * {
-
             box-sizing: border-box;
-
         }
 
         @media (prefers-reduced-motion: reduce) {
-
             * {
-
                 animation-duration: 0.001ms !important;
-
                 transition-duration: 0.001ms !important;
-
             }
-
         }
 
         html {
-
             scroll-behavior: smooth;
-
         }
 
         body {
-
             margin: 0;
-
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
             color: var(--ink);
-
             background: var(--paper);
-
             text-align: center;
-
             -webkit-font-smoothing: antialiased;
-
         }
 
         a:focus-visible,
-
         button:focus-visible {
-
             outline: 3px solid var(--focus);
-
             outline-offset: 2px;
-
         }
 
-        /* Professional Gradient Header */
+        /* Header */
 
         header {
-
             position: relative;
-
             overflow: hidden;
-
             background:
-
                 radial-gradient(circle at 15% 50%, rgba(73, 102, 210, 0.45), transparent 32%),
-
                 radial-gradient(circle at 85% 50%, rgba(116, 72, 190, 0.38), transparent 35%),
-
                 linear-gradient(110deg, #111827, #1e2a55 50%, #24183f);
-
             color: #ffffff;
-
             padding: 23px 20px;
-
             font-family: 'Outfit', sans-serif;
-
             font-size: 20px;
-
             font-weight: 800;
-
             letter-spacing: 1.2px;
-
             box-shadow: 0 6px 22px rgba(20, 25, 50, 0.18);
-
         }
 
         header::before {
-
             content: "";
-
             position: absolute;
-
             width: 180px;
-
             height: 180px;
-
             border-radius: 50%;
-
             background: rgba(255, 255, 255, 0.035);
-
             top: -100px;
-
             left: 20%;
-
         }
 
         header::after {
-
             content: "";
-
             position: absolute;
-
             width: 220px;
-
             height: 220px;
-
             border-radius: 50%;
-
             background: rgba(255, 255, 255, 0.025);
-
             bottom: -150px;
-
             right: 15%;
-
         }
 
         .brand {
-
             position: relative;
-
             z-index: 1;
-
         }
 
         .cube-stripe {
-
             height: 4px;
-
             background: linear-gradient(
-
                 90deg,
-
                 #2d5fe0,
-
                 #6d5ce7,
-
                 #2d5fe0
-
             );
-
         }
 
+        /* Hero */
+
         .hero {
-
             background:
-
                 radial-gradient(65% 60% at 20% 0%, #eef2ff 0%, transparent 60%),
-
                 radial-gradient(55% 50% at 100% 0%, #fdf1e8 0%, transparent 55%),
-
                 var(--paper);
-
             padding: 70px 20px 46px;
-
         }
 
         .hero-inner {
-
             max-width: 620px;
-
             margin: 0 auto;
-
             animation: rise 0.6s ease both;
-
         }
 
         @keyframes rise {
-
             from {
-
                 opacity: 0;
-
                 transform: translateY(10px);
-
             }
 
             to {
-
                 opacity: 1;
-
                 transform: translateY(0);
-
             }
-
         }
 
         h1 {
-
             font-family: 'Outfit', sans-serif;
-
             font-size: 48px;
-
             font-weight: 800;
-
             line-height: 1.06;
-
             letter-spacing: -0.5px;
-
             margin: 0 0 12px;
-
         }
 
         h2 {
-
             font-size: 19px;
-
             font-weight: 500;
-
             color: var(--ink-soft);
-
             margin: 0;
-
         }
 
         .description {
-
             max-width: 480px;
-
             margin: 26px auto 0;
-
             font-size: 16.5px;
-
             line-height: 1.7;
-
             color: var(--ink-soft);
-
         }
 
         .container {
-
             max-width: 620px;
-
             margin: 0 auto;
-
             padding: 0 20px 30px;
-
         }
 
+        /* Details */
+
         .details {
-
             background: var(--card);
-
             padding: 6px 26px;
-
             border-radius: var(--radius-lg);
-
             margin: 40px 0 0;
-
             text-align: left;
-
             box-shadow:
-
                 0 1px 2px rgba(22, 23, 26, 0.04),
-
                 0 18px 34px -22px rgba(22, 23, 26, 0.20);
-
             border: 1px solid var(--line);
-
         }
 
         .details p {
-
             display: flex;
-
             align-items: flex-start;
-
             gap: 12px;
-
             margin: 0;
-
             padding: 16px 0;
-
             font-size: 16px;
-
             line-height: 1.5;
-
             color: var(--ink);
-
         }
 
         .details p + p {
-
             border-top: 1px solid var(--line);
+        }
 
+        /* Book Preview Section */
+
+        .book-preview {
+            margin: 54px 0 0;
+            text-align: center;
+        }
+
+        .book-preview h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin: 0;
+            color: var(--ink);
+        }
+
+        .book-preview-intro {
+            max-width: 500px;
+            margin: 12px auto 30px;
+            color: var(--ink-soft);
+            font-size: 15.5px;
+            line-height: 1.65;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            text-align: left;
+        }
+
+        .preview-item {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            box-shadow:
+                0 1px 2px rgba(22, 23, 26, 0.04),
+                0 14px 28px -20px rgba(22, 23, 26, 0.20);
+            overflow: hidden;
+        }
+
+        .preview-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 9px;
+            background: #f1f1f1;
+        }
+
+        .preview-caption {
+            padding: 13px 7px 8px;
+        }
+
+        .preview-caption strong {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 5px;
+        }
+
+        .preview-caption span {
+            display: block;
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--ink-soft);
         }
 
         /* Purchase card */
 
         .buy-card {
-
             position: relative;
-
             margin: 46px 0 0;
-
             padding: 3px;
-
             border-radius: calc(var(--radius-lg) + 3px);
-
             background: var(--cube-gradient);
-
             box-shadow:
-
                 0 24px 48px -20px rgba(45, 95, 224, 0.35);
-
         }
 
         .buy-card-inner {
-
             background: var(--card);
-
             border-radius: var(--radius-lg);
-
             padding: 28px 28px 26px;
-
         }
 
         /* Compact offer */
 
         .price-row {
-
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
             gap: 5px;
-
         }
 
         .price-word {
-
             display: inline-block;
-
             font-family: 'Outfit', sans-serif;
-
             font-size: 16px;
-
             font-weight: 700;
-
             color: var(--blue-dark);
-
             letter-spacing: 0.2px;
-
         }
 
         .price-amount {
-
             display: flex;
-
             align-items: baseline;
-
             justify-content: center;
-
             gap: 10px;
-
             font-family: 'Outfit', sans-serif;
-
             line-height: 1;
-
         }
 
         .old-price {
-
             font-size: 25px;
-
             font-weight: 600;
-
             color: #999;
-
             text-decoration: line-through;
-
             text-decoration-thickness: 2px;
-
         }
 
         .new-price {
-
             font-size: 58px;
-
             font-weight: 800;
-
             letter-spacing: -1.5px;
-
             color: var(--blue-dark);
-
         }
 
         .razorpay-button {
-
             min-height: 55px;
-
             margin: 24px 0 0;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
         }
 
         .razorpay-button iframe {
-
             border-radius: 12px !important;
-
         }
 
         .delivery {
-
             margin: 22px 0 0;
-
             font-size: 14px;
-
             color: var(--ink-soft);
-
         }
 
         .help {
-
             margin: 8px 0 0;
-
             font-size: 14.5px;
-
             color: var(--ink-soft);
-
         }
 
+        /* Footer */
+
         footer {
-
             margin-top: 66px;
-
             padding: 30px 15px 26px;
-
             background: var(--ink);
-
             color: #b9b7b2;
-
             font-size: 13.5px;
-
         }
 
         footer nav {
-
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 4px;
-
         }
 
         footer a {
-
             color: #d8d6d1;
-
             text-decoration: none;
-
             padding: 4px 10px;
-
             border-radius: 6px;
-
             transition: color 0.15s ease, background-color 0.15s ease;
-
         }
 
         footer a:hover {
-
             color: #ffffff;
-
             background: rgba(255, 255, 255, 0.08);
-
         }
 
         footer .copyright {
-
             margin-top: 14px;
-
             color: #85837f;
-
         }
+
+        /* Mobile */
 
         @media (max-width: 600px) {
 
             header {
-
                 font-size: 17px;
-
                 padding: 18px 16px;
-
                 letter-spacing: 1px;
-
             }
 
             .hero {
-
                 padding: 46px 16px 34px;
-
             }
 
             h1 {
-
                 font-size: 35px;
-
             }
 
             h2 {
-
                 font-size: 17px;
-
             }
 
             .description {
-
                 font-size: 15.5px;
-
             }
 
             .container {
-
                 padding: 0 16px 24px;
-
             }
 
             .details {
-
                 padding: 4px 20px;
-
             }
 
             .details p {
-
                 font-size: 15px;
-
                 padding: 14px 0;
+            }
 
+            .book-preview {
+                margin-top: 44px;
+            }
+
+            .book-preview h3 {
+                font-size: 27px;
+            }
+
+            .book-preview-intro {
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+
+            .preview-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .preview-item {
+                padding: 9px;
+            }
+
+            .preview-caption {
+                padding: 12px 6px 7px;
             }
 
             .buy-card-inner {
-
                 padding: 25px 18px 22px;
-
             }
 
             .price-word {
-
                 font-size: 15px;
-
             }
 
             .old-price {
-
                 font-size: 21px;
-
             }
 
             .new-price {
-
                 font-size: 48px;
-
             }
 
             .price-amount {
-
                 gap: 8px;
-
             }
-
         }
 
     </style>
@@ -657,13 +512,9 @@
         <h2>A Beginner's Layer-by-Layer Guide</h2>
 
         <p class="description">
-
             A simple, beginner-friendly PDF ebook that teaches you how to
-
             solve a standard 3×3 Rubik's Cube step by step, with clear
-
             images for every step.
-
         </p>
 
     </div>
@@ -690,6 +541,149 @@
 
     </div>
 
+
+    <!-- BOOK PREVIEW SECTION -->
+
+    <section class="book-preview">
+
+        <h3>See What's Inside the Book</h3>
+
+        <p class="book-preview-intro">
+            Take a look at actual pages from the ebook and see how the
+            step-by-step method is explained with clear visual guidance.
+        </p>
+
+
+        <div class="preview-grid">
+
+
+            <!-- Book Cover -->
+
+            <div class="preview-item">
+
+                <img
+                    src="ebook%20cover.jpeg"
+                    alt="Solve the Cube ebook cover"
+                    loading="lazy"
+                >
+
+                <div class="preview-caption">
+
+                    <strong>Begin Your Cube-Solving Journey</strong>
+
+                    <span>
+                        A beginner-friendly guide to solving a standard
+                        3×3 Rubik's Cube.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Screenshot 132 -->
+
+            <div class="preview-item">
+
+                <img
+                    src="Screenshot%20(132).png"
+                    alt="Inside page of the Solve the Cube ebook"
+                    loading="lazy"
+                >
+
+                <div class="preview-caption">
+
+                    <strong>Clear Step-by-Step Guidance</strong>
+
+                    <span>
+                        Follow the instructions directly from the page
+                        while working on your cube.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Screenshot 134 -->
+
+            <div class="preview-item">
+
+                <img
+                    src="Screenshot%20(134).png"
+                    alt="Inside page showing Rubik's Cube solving instructions"
+                    loading="lazy"
+                >
+
+                <div class="preview-caption">
+
+                    <strong>Visual Cube Instructions</strong>
+
+                    <span>
+                        Use the visual guidance to understand what to do
+                        at each stage.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Screenshot 135 -->
+
+            <div class="preview-item">
+
+                <img
+                    src="Screenshot%20(135).png"
+                    alt="Inside page of the Rubik's Cube ebook"
+                    loading="lazy"
+                >
+
+                <div class="preview-caption">
+
+                    <strong>Learn One Step at a Time</strong>
+
+                    <span>
+                        Progress through the Layer-by-Layer method
+                        without needing advanced knowledge.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Screenshot 136 -->
+
+            <div class="preview-item">
+
+                <img
+                    src="Screenshot%20(136).png"
+                    alt="Inside page showing the Rubik's Cube solving method"
+                    loading="lazy"
+                >
+
+                <div class="preview-caption">
+
+                    <strong>Work Towards a Solved Cube</strong>
+
+                    <span>
+                        Continue through the method until you can
+                        complete your 3×3 Rubik's Cube.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PURCHASE CARD -->
+
     <div class="buy-card">
 
         <div class="buy-card-inner">
@@ -697,9 +691,7 @@
             <div class="price-row">
 
                 <span class="price-word">
-
                     Limited Time Offer
-
                 </span>
 
                 <div class="price-amount">
@@ -712,26 +704,30 @@
 
             </div>
 
+
             <!-- Razorpay Payment Button -->
 
             <div class="razorpay-button">
 
                 <form>
-                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_TYhKBihjTrNoLu" async> </script>
+
+                    <script
+                        src="https://checkout.razorpay.com/v1/payment-button.js"
+                        data-payment_button_id="pl_TYhKBihjTrNoLu"
+                        async>
+                    </script>
+
                 </form>
 
             </div>
 
+
             <p class="delivery">
-
                 Your ebook will be delivered to your email within 24 hours.
-
             </p>
 
             <p class="help">
-
                 Need help? Contact us by email if you have any questions.
-
             </p>
 
         </div>
@@ -740,11 +736,12 @@
 
 </div>
 
+
 <footer>
 
     <nav>
 
-        <a href="terms.html">Terms & Conditions</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
 
         <a href="privacy.html">Privacy Policy</a>
 
@@ -753,12 +750,11 @@
     </nav>
 
     <div class="copyright">
-
         © 2026 Rigsaw Sphere
-
     </div>
 
 </footer>
+
 
 </body>
 
