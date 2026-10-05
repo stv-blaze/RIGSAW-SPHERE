@@ -24,9 +24,14 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f7f5f0;
+    background:
+        radial-gradient(circle at 8% 12%, rgba(82,112,220,0.10), transparent 28%),
+        radial-gradient(circle at 92% 32%, rgba(125,88,180,0.09), transparent 30%),
+        radial-gradient(circle at 45% 85%, rgba(49,87,213,0.07), transparent 30%),
+        linear-gradient(135deg, #eef2ff 0%, #f5f1fb 48%, #edf4f8 100%);
     color: #202020;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 img {
@@ -45,12 +50,12 @@ a {
 ========================= */
 
 header {
-    background: rgba(247,245,240,0.96);
-    border-bottom: 1px solid #e5e1d9;
+    background: rgba(242,244,252,0.88);
+    border-bottom: 1px solid rgba(100,105,135,0.16);
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(14px);
 }
 
 .navbar {
@@ -78,7 +83,7 @@ header {
 }
 
 .nav-links a:hover {
-    color: #111;
+    color: #3157d5;
 }
 
 
@@ -129,7 +134,7 @@ header {
     width: 330px;
     border-radius: 18px;
     box-shadow:
-        0 25px 60px rgba(0,0,0,0.16),
+        0 25px 60px rgba(35,45,90,0.18),
         0 5px 15px rgba(0,0,0,0.08);
     transform: rotate(1deg);
 }
@@ -140,9 +145,10 @@ header {
 ========================= */
 
 .trust-strip {
-    border-top: 1px solid #e5e1d9;
-    border-bottom: 1px solid #e5e1d9;
-    background: #ffffff;
+    border-top: 1px solid rgba(100,105,135,0.14);
+    border-bottom: 1px solid rgba(100,105,135,0.14);
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(8px);
 }
 
 .trust-inner {
@@ -205,17 +211,18 @@ header {
 }
 
 .feature-card {
-    background: #fff;
-    border: 1px solid #e8e4dc;
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(220,220,230,0.85);
     border-radius: 18px;
     padding: 27px;
     min-height: 185px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 7px 25px rgba(42,52,95,0.035);
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 35px rgba(42,52,95,0.10);
 }
 
 .feature-number {
@@ -277,9 +284,14 @@ header {
 ========================= */
 
 .preview-section {
-    background: #ffffff;
-    border-top: 1px solid #e7e3dc;
-    border-bottom: 1px solid #e7e3dc;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.96),
+            rgba(246,248,255,0.94)
+        );
+    border-top: 1px solid rgba(210,215,230,0.8);
+    border-bottom: 1px solid rgba(210,215,230,0.8);
     padding: 100px 24px;
 }
 
@@ -321,11 +333,12 @@ header {
     grid-template-columns: 1.15fr 0.85fr;
     gap: 45px;
     align-items: center;
-    background: #f7f5f0;
+    background: rgba(247,245,240,0.92);
     border: 1px solid #e5e0d7;
     border-radius: 25px;
     padding: 30px;
     margin-bottom: 25px;
+    box-shadow: 0 10px 35px rgba(55,65,110,0.05);
 }
 
 .featured-image-wrap {
@@ -382,7 +395,7 @@ header {
 }
 
 .preview-card {
-    background: #f7f5f0;
+    background: rgba(247,245,240,0.92);
     border: 1px solid #e5e0d7;
     border-radius: 17px;
     padding: 12px;
@@ -413,7 +426,23 @@ header {
 
 .purchase-section {
     padding: 105px 24px;
-    background: #f7f5f0;
+
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(95,116,210,0.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(121,78,155,0.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #eef1fb,
+            #f3edf8
+        );
 }
 
 .purchase-container {
@@ -428,7 +457,12 @@ header {
     position: relative;
     overflow: hidden;
     background:
-        linear-gradient(135deg, #252238 0%, #302b47 48%, #211f2d 100%);
+        linear-gradient(
+            135deg,
+            #252238 0%,
+            #302b47 48%,
+            #211f2d 100%
+        );
     border-radius: 30px;
     padding: 55px;
     box-shadow:
@@ -583,17 +617,11 @@ header {
     margin-bottom: 17px;
 }
 
-
-/* Razorpay button wrapper */
-
 .razorpay-button {
     display: flex;
     justify-content: center;
     margin: 5px 0 17px;
 }
-
-
-/* Delivery */
 
 .delivery {
     color: #bbb6c5;
