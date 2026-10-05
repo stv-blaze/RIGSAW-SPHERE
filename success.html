@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Payment Successful | Rigsaw Sphere</title>
+    <title>Payment Successful | SOLVE THE CUBE</title>
 
     <!-- Google tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -21,8 +21,8 @@
         gtag('config', 'G-XXXXXXXXXX');
 
         /*
-         * Conversion event
-         * This fires when the customer reaches this page.
+         * Purchase conversion event
+         * Value: ₹49
          */
         gtag('event', 'purchase', {
             currency: 'INR',
@@ -37,9 +37,9 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f3f6fb;
-            color: #172033;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #dce9ff, #f5f7fb);
+            color: #111827;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -49,60 +49,109 @@
 
         .container {
             width: 100%;
-            max-width: 520px;
-            background: white;
-            border-radius: 18px;
+            max-width: 560px;
+            background: #ffffff;
+            border-radius: 20px;
             padding: 45px 30px;
             text-align: center;
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
         }
 
         .check {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
             margin: 0 auto 25px;
             border-radius: 50%;
-            background: #e8f7ee;
+            background: #e7f8ee;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 38px;
-            color: #20a05a;
+            font-size: 42px;
+            font-weight: bold;
+            color: #159447;
         }
 
         h1 {
-            margin: 0 0 15px;
-            font-size: 28px;
+            margin: 0 0 10px;
+            font-size: 30px;
+            line-height: 1.25;
+        }
+
+        .book-name {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 18px 0;
+            color: #172554;
         }
 
         p {
             font-size: 16px;
-            line-height: 1.6;
-            color: #5c6678;
+            line-height: 1.65;
+            color: #5b6473;
             margin: 10px 0;
         }
 
         .price {
-            font-size: 20px;
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #eef4ff;
+            color: #172554;
+            font-size: 19px;
             font-weight: bold;
-            margin: 22px 0;
-            color: #172033;
         }
 
-        .note {
+        .delivery-box {
             margin-top: 25px;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 12px;
             background: #f5f7fa;
+            text-align: left;
+        }
+
+        .delivery-box strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #202938;
+            font-size: 16px;
+        }
+
+        .delivery-box p {
+            margin: 0;
             font-size: 14px;
-            color: #606b7d;
         }
 
         .brand {
             margin-top: 30px;
+            font-size: 17px;
             font-weight: bold;
-            font-size: 15px;
-            color: #172033;
+            color: #172554;
+        }
+
+        .tagline {
+            margin-top: 6px;
+            font-size: 13px;
+            color: #7a8494;
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                padding: 35px 22px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .book-name {
+                font-size: 19px;
+            }
+
+            p {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
@@ -115,28 +164,44 @@
 
         <h1>Payment Successful</h1>
 
+        <div class="book-name">
+            SOLVE THE CUBE
+        </div>
+
         <p>
-            Thank you for purchasing the
-            <strong>Rubik's Cube: Master The Layer Method</strong>
-            eBook.
+            A Beginner's Layer-by-Layer Guide
         </p>
 
         <div class="price">
             Amount Paid: ₹49
         </div>
 
-        <p>
-            Your eBook will be sent manually to the email address
-            provided during your purchase.
-        </p>
+        <div class="delivery-box">
 
-        <div class="note">
-            Please check your inbox and spam/junk folder.
-            Your eBook will be delivered as soon as your payment is received and verified.
+            <strong>Your eBook is being prepared.</strong>
+
+            <p>
+                Your copy of <strong>SOLVE THE CUBE</strong> will be
+                sent manually to the email address provided during
+                your purchase.
+            </p>
+
+            <p style="margin-top: 10px;">
+                Please check your inbox and your spam or junk folder.
+            </p>
+
         </div>
+
+        <p style="margin-top: 25px;">
+            Thank you for supporting Rigsaw Sphere.
+        </p>
 
         <div class="brand">
             Rigsaw Sphere
+        </div>
+
+        <div class="tagline">
+            Learn. Solve. Master.
         </div>
 
     </div>
