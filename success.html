@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,34 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Payment Successful | SOLVE THE CUBE</title>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-536JJNHG');</script>
-<!-- End Google Tag Manager -->
-  
+    <meta name="description" content="Your payment for SOLVE THE CUBE, the beginner's Rubik's Cube ebook, was successful.">
+
+    <!-- Google Tag Manager: Initialize dataLayer and record purchase event -->
     <script>
         window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
+        // Prevent duplicate purchase events from page refreshes
+        // within the same browser tab.
+        var purchaseEventKey = 'solveTheCubePurchaseTracked';
+
+        try {
+            if (!sessionStorage.getItem(purchaseEventKey)) {
+                window.dataLayer.push({
+                    event: 'purchase',
+                    currency: 'INR',
+                    value: 49,
+                    items: [{
+                        item_id: 'solve-the-cube-pdf',
+                        item_name: 'SOLVE THE CUBE',
+                        price: 49,
+                        quantity: 1
+                    }]
+                });
+
+                sessionStorage.setItem(purchaseEventKey, 'true');
+            }
+        } catch (error) {
+            // Tracking can still initialize if sessionStorage is unavailable.
+            // The purchase event may be repeated on subsequent page loads.
+            window.dataLayer.push({
+                event: 'purchase',
+                currency: 'INR',
+                value: 49,
+                items: [{
+                    item_id: 'solve-the-cube-pdf',
+                    item_name: 'SOLVE THE CUBE',
+                    price: 49,
+                    quantity: 1
+                }]
+            });
         }
-
-        gtag('js', new Date());
-
-        gtag('config', 'G-XXXXXXXXXX');
-
-        /*
-         * Purchase conversion event
-         * Value: ₹49
-         */
-        gtag('event', 'purchase', {
-            currency: 'INR',
-            value: 49
-        });
     </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l !== 'dataLayer' ? '&l=' + l : '';
+
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-536JJNHG');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <style>
         * {
@@ -140,7 +175,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         @media (max-width: 480px) {
-
             .container {
                 padding: 35px 22px;
             }
@@ -162,9 +196,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-    <div class="container">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-536JJNHG"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-        <div class="check">✓</div>
+    <main class="container">
+
+        <div class="check" aria-hidden="true">✓</div>
 
         <h1>Payment Successful</h1>
 
@@ -208,7 +253,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             Learn. Solve. Master.
         </div>
 
-    </div>
+    </main>
 
 </body>
 </html>
